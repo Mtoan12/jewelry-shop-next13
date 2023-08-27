@@ -55,7 +55,7 @@ export default function MobileNavBar() {
                 </TooltipCustomize>
                 <TooltipCustomize content="Liên hệ Zalo: Mai Ngoc Man">
                     <li>
-                        <a className="zalo-icon" href="https://www.zalo.com" target="_blank">
+                        <a className="zalo-icon" href="https://zalo.me/0972456292" target="_blank">
                             <SiZalo size={36} />
                         </a>
                     </li>
