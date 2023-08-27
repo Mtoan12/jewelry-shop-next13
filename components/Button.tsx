@@ -4,7 +4,7 @@ type Props = {
     onClick?: () => void;
     className?: string;
     size?: 'small' | 'large';
-    type?: string;
+    type?: 'submit' | 'reset' | 'button' | undefined;
 };
 export default function Button({
     type = 'button',
