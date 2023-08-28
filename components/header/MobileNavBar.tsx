@@ -12,7 +12,7 @@ type Nav = 'default' | 'ring';
 export default function MobileNavBar() {
     const [navType, setNavType] = useState<Nav>('default');
     const DefaultNav = () => (
-        <SheetContent side={'left'}>
+        <div className="fade-in">
             <ul className="flex flex-col mt-5 cursor-pointer">
                 <li
                     className="header__mobile-nav-title flex justify-between items-center"
@@ -41,36 +41,30 @@ export default function MobileNavBar() {
                 </li>
             </ul>
             <ul className="flex items-center justify-center mt-5 gap-5 lg:hidden">
-                <TooltipCustomize content="Follow Facebook: Tiệm Vàng Kim Cúc LX">
-                    <li>
-                        <a
-                            className="facebook-icon"
-                            href="https://www.facebook.com/profile.php?id=100054235431878"
-                            target="_blank"
-                        >
-                            <AiFillFacebook size={36} />
-                        </a>
-                    </li>
-                </TooltipCustomize>
-                <TooltipCustomize content="Liên hệ Zalo: Mai Ngoc Man">
-                    <li>
-                        <a className="zalo-icon" href="https://zalo.me/0972456292" target="_blank">
-                            <SiZalo size={36} />
-                        </a>
-                    </li>
-                </TooltipCustomize>
-                <TooltipCustomize content="Liên hệ Hotline: 097 245 62 92">
-                    <li>
-                        <a className="phone-icon" href="tel:0972456292" target="_blank">
-                            <FiPhone size={36} />
-                        </a>
-                    </li>
-                </TooltipCustomize>
+                <li>
+                    <a
+                        className="facebook-icon"
+                        href="https://www.facebook.com/profile.php?id=100054235431878"
+                        target="_blank"
+                    >
+                        <AiFillFacebook size={36} />
+                    </a>
+                </li>
+                <li>
+                    <a className="zalo-icon" href="https://zalo.me/0972456292" target="_blank">
+                        <SiZalo size={36} />
+                    </a>
+                </li>
+                <li>
+                    <a className="phone-icon" href="tel:0972456292" target="_blank">
+                        <FiPhone size={36} />
+                    </a>
+                </li>
             </ul>
-        </SheetContent>
+        </div>
     );
     const RingNav = () => (
-        <SheetContent side={'left'}>
+        <div className="fade-in">
             <SheetHeader>
                 <SheetTitle>
                     <button
@@ -99,7 +93,7 @@ export default function MobileNavBar() {
                     </Link>
                 </li>
             </ul>
-        </SheetContent>
+        </div>
     );
 
     const contentType = {
@@ -113,7 +107,9 @@ export default function MobileNavBar() {
             <SheetTrigger className="lg:hidden bg-primaryColor rounded-full p-2">
                 <FiMenu size={23} className={'text-white '} />
             </SheetTrigger>
-            <Content />
+            <SheetContent side={'left'}>
+                <Content />
+            </SheetContent>
         </Sheet>
     );
 }

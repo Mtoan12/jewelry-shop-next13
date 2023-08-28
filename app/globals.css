@@ -79,3 +79,15 @@ input:focus {
     outline: none;
 }
 
+.fade-in {
+    animation: fadeIn linear 0.35s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

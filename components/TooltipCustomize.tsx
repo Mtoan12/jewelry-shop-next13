@@ -6,10 +6,10 @@ type Props = {
 };
 export default function TooltipCustomize({ children, content }: Props) {
     return (
-        <TooltipProvider >
+        <TooltipProvider>
             <Tooltip>
                 <TooltipTrigger>{children}</TooltipTrigger>
-                <TooltipContent className='bg-black text-white'>
+                <TooltipContent className="bg-black text-white">
                     <p>{content}</p>
                 </TooltipContent>
             </Tooltip>
