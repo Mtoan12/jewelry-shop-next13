@@ -107,7 +107,7 @@ export default function MobileNavBar() {
             <SheetTrigger className="lg:hidden bg-primaryColor rounded-full p-2">
                 <FiMenu size={23} className={'text-white '} />
             </SheetTrigger>
-            <SheetContent side={'left'}>
+            <SheetContent side={'left'} className="w-2/3 md:w-1/2">
                 <Content />
             </SheetContent>
         </Sheet>
