@@ -14,7 +14,7 @@ export default async function TitleProvider({ title, children, href = undefined 
                     <h2 className="uppercase text-xl text-white font-medium bg-primaryColor px-4 py-1 w-fit">
                         {title}
                     </h2>
-                    <span className="trapezoid"></span>
+                    <span className="trapezoid "></span>
                 </div>
                 {href && (
                     <Link

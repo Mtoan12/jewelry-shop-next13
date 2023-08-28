@@ -3,6 +3,8 @@
     height: 0;
     border-bottom: 32px solid theme('colors.primaryColor.DEFAULT');
     border-right: 32px solid transparent;
+
+    transform: translateX(-1px);
 }
 .home__products {
     display: grid;
