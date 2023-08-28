@@ -54,6 +54,9 @@ module.exports = {
                     DEFAULT: '#c68b00',
                     hover: '#dd9933',
                 },
+                secondaryColor: {
+                    DEFAULT: '#fa7814',
+                },
             },
             borderRadius: {
                 lg: 'var(--radius)',

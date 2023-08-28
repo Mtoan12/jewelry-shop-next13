@@ -8,7 +8,7 @@ import { FiMenu, FiPhone } from 'react-icons/fi';
 import { SiZalo } from 'react-icons/si';
 import TooltipCustomize from '../TooltipCustomize';
 
-type Nav = 'default' | 'ring' | 'bracelet';
+type Nav = 'default' | 'ring';
 export default function MobileNavBar() {
     const [navType, setNavType] = useState<Nav>('default');
     const DefaultNav = () => (
@@ -21,12 +21,11 @@ export default function MobileNavBar() {
                     <span>Nhẫn</span>
                     <AiOutlineRight />
                 </li>
-                <li
-                    className="header__mobile-nav-title flex justify-between items-center"
-                    onClick={(e) => setNavType('bracelet')}
-                >
-                    <span>Vòng tay</span>
-                    <AiOutlineRight />
+                <li className="header__mobile-nav-title">
+                    <Link href="/">Vòng tay</Link>
+                </li>
+                <li className="header__mobile-nav-title">
+                    <Link href="/">Lắc tay</Link>
                 </li>
                 <li className="header__mobile-nav-title">
                     <Link href="/">Bông tai</Link>
@@ -96,48 +95,16 @@ export default function MobileNavBar() {
                 </li>
                 <li className="header__mobile-nav-title">
                     <Link href="/" className="block w-full">
-                        Nhẫn cặp
+                        Nhẫn đôi nam - nữ
                     </Link>
                 </li>
             </ul>
         </SheetContent>
     );
-    const BraceletNav = () => (
-        <SheetContent side={'left'}>
-            <SheetHeader>
-                <SheetTitle>
-                    <button
-                        className="flex gap-2 items-center"
-                        onClick={(e) => setNavType('default')}
-                    >
-                        <AiOutlineLeft />
-                        <span>Vòng tay</span>
-                    </button>
-                </SheetTitle>
-            </SheetHeader>
-            <ul className="flex flex-col mt-5">
-                <li className="header__mobile-nav-title">
-                    <Link href="/">Lắc tay vàng - bạc</Link>
-                </li>
-                <li className="header__mobile-nav-title">
-                    <Link href="/">Vòng tay đá</Link>
-                </li>
-                <li className="header__mobile-nav-title">
-                    <Link href="/">Vòng tay đôi</Link>
-                </li>
-                <li className="header__mobile-nav-title">
-                    <Link href="/">Vòng tay mix charm</Link>
-                </li>
-                <li className="header__mobile-nav-title">
-                    <Link href="/">Vòng tay nguyên khối</Link>
-                </li>
-            </ul>
-        </SheetContent>
-    );
+
     const contentType = {
         default: DefaultNav,
         ring: RingNav,
-        bracelet: BraceletNav,
     };
 
     const Content = contentType[navType];

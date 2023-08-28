@@ -1,0 +1,11 @@
+.trapezoid {
+    width: 0;
+    height: 0;
+    border-bottom: 32px solid theme('colors.primaryColor.DEFAULT');
+    border-right: 32px solid transparent;
+}
+.home__products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 40px 20px;
+}

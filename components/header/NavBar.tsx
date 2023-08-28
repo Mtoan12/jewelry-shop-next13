@@ -34,44 +34,30 @@ export default function NavBar() {
                             </Link>
                             <Link href="/" className="header__navbar-title" legacyBehavior passHref>
                                 <NavigationMenuLink className={'header__sub-nav'}>
-                                    Nhẫn cặp
+                                    Nhẫn đôi nam - nữ
                                 </NavigationMenuLink>
                             </Link>
                         </NavigationMenuContent>
+                    </NavigationMenuItem>
+
+                    <NavigationMenuItem>
+                        <Link href="/" className="header__navbar-title" legacyBehavior passHref>
+                            <NavigationMenuLink
+                                className={` ${navigationMenuTriggerStyle()} header__navbar-title`}
+                            >
+                                Vòng tay
+                            </NavigationMenuLink>
+                        </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <NavigationMenuTrigger className="header__navbar-title">
-                            Vòng tay
-                        </NavigationMenuTrigger>
-                        <NavigationMenuContent className="flex flex-col gap-2 py-2">
-                            <Link href="/" className="header__navbar-title" legacyBehavior passHref>
-                                <NavigationMenuLink className={'header__sub-nav'}>
-                                    Lắc tay vàng - bạc
-                                </NavigationMenuLink>
-                            </Link>
-                            <Link href="/" className="header__navbar-title" legacyBehavior passHref>
-                                <NavigationMenuLink className={'header__sub-nav'}>
-                                    Vòng tay đá
-                                </NavigationMenuLink>
-                            </Link>
-                            <Link href="/" className="header__navbar-title" legacyBehavior passHref>
-                                <NavigationMenuLink className={'header__sub-nav'}>
-                                    Vòng tay đôi
-                                </NavigationMenuLink>
-                            </Link>
-                            <Link href="/" className="header__navbar-title" legacyBehavior passHref>
-                                <NavigationMenuLink className={'header__sub-nav'}>
-                                    Vòng tay mix charm
-                                </NavigationMenuLink>
-                            </Link>
-                            <Link href="/" className="header__navbar-title" legacyBehavior passHref>
-                                <NavigationMenuLink className={'header__sub-nav'}>
-                                    Vòng tay nguyên khối
-                                </NavigationMenuLink>
-                            </Link>
-                        </NavigationMenuContent>
+                        <Link href="/" className="header__navbar-title" legacyBehavior passHref>
+                            <NavigationMenuLink
+                                className={` ${navigationMenuTriggerStyle()} header__navbar-title`}
+                            >
+                                Lắc tay
+                            </NavigationMenuLink>
+                        </Link>
                     </NavigationMenuItem>
-                    
                     <NavigationMenuItem>
                         <Link href="/" className="header__navbar-title" legacyBehavior passHref>
                             <NavigationMenuLink
