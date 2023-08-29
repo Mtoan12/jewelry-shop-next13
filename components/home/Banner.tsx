@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import './banner.scss';
 
-const urls = ['banner1.png', '/banner2.png'];
+const urls = ['banner1.png', '/banner2.png', '/banner3.png'];
 export default function Banner() {
     const [urlIndex, setUrlIndex] = useState(0);
 
@@ -14,7 +14,7 @@ export default function Banner() {
             } else {
                 setUrlIndex(newIndex);
             }
-        }, 4000);
+        }, 5000);
 
         return () => {
             if (interval) {
@@ -24,14 +24,14 @@ export default function Banner() {
     }, [urlIndex]);
 
     return (
-        <div className="grid place-content-center m-0 p-0 overflow-hidden">
+        <div className="grid place-content-center m-0 p-0 overflow-hidden  transition">
             <div
                 className="banner"
                 style={{
                     backgroundImage: `url(${urls[urlIndex]})`,
                     backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'top center',
-                    backgroundSize: 'cover',
+                    backgroundPosition: 'center center',
+                    backgroundSize: `${true ? 'contain' : 'cover'}`,
                 }}
             ></div>
         </div>
