@@ -1,8 +1,9 @@
+import Footer from '@/components/footer/Footer';
 import Header from '@/components/header/Header';
-import './globals.css';
 import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
-import Footer from '@/components/footer/Footer';
+import './globals.css';
+import ScrollToTop from '@/components/ScrollToTop';
 
 const font = Open_Sans({ subsets: ['latin'] });
 
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Header />
                 {children}
                 <Footer />
+                <ScrollToTop />
             </body>
         </html>
     );
