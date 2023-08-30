@@ -7,11 +7,26 @@ export default async function Home() {
     return (
         <main>
             <Banner />
-            <div className="mt-10">
+            <article className="flex flex-col gap-12 mt-10">
                 <TitleProvider title="Danh mục sản phẩm">
                     <HomeCategories />
                 </TitleProvider>
-            </div>
+                <TitleProvider title="Sản phẩm mới">
+                    <h2>Cập nhật sau...</h2>
+                </TitleProvider>
+                <TitleProvider title="Nhẫn">
+                    <h2>Cập nhật sau...</h2>
+                </TitleProvider>
+                <TitleProvider title="Lắc tay - Vòng tay">
+                    <h2>Cập nhật sau...</h2>
+                </TitleProvider>
+                <TitleProvider title="Mặt dây">
+                    <h2>Cập nhật sau...</h2>
+                </TitleProvider>
+                <TitleProvider title="Hạt charm">
+                    <h2>Cập nhật sau...</h2>
+                </TitleProvider>
+            </article>
         </main>
     );
 }
