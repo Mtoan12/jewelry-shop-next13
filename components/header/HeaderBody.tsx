@@ -30,7 +30,7 @@ export default function HeaderBody() {
                         </a>
                     </li>
                 </TooltipCustomize>
-                <TooltipCustomize content="Liên hệ Zalo: Mai Ngoc Man">
+            <TooltipCustomize content="Liên hệ Zalo: Mai Ngoc Man">
                     <li className="header__follow-icon">
                         <a className="zalo-icon" href="https://zalo.me/0972456292" target="_blank">
                             <SiZalo size={20} />
