@@ -10,7 +10,7 @@ import {
     SelectValue,
 } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 export default function Admin() {
     const [category, setCategory] = useState('0');
@@ -22,6 +22,18 @@ export default function Admin() {
         setValue,
         reset,
     } = useForm();
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await fetch(
+                'https://webtiemvangkimcucser.azurewebsites.net/api/SanPham/GetAll'
+            );
+
+            console.log(data);
+        };
+
+        fetchData();
+    }, []);
 
     const onSubmit = async (data: any) => {
         const { image, name, weight, description } = data;
