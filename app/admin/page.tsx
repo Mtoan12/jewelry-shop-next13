@@ -10,9 +10,11 @@ import {
     SelectValue,
 } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
-import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 export default function Admin() {
+    const [imageSource, setImageSource] = useState<File | null>(null);
     const [category, setCategory] = useState('0');
     const [material, setMaterial] = useState('0');
     const {
@@ -22,18 +24,6 @@ export default function Admin() {
         setValue,
         reset,
     } = useForm();
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const data = await fetch(
-                'https://webtiemvangkimcucser.azurewebsites.net/api/SanPham/GetAll'
-            );
-
-            console.log(data);
-        };
-
-        fetchData();
-    }, []);
 
     const onSubmit = async (data: any) => {
         const { image, name, weight, description } = data;
@@ -52,9 +42,16 @@ export default function Admin() {
         } catch (error: any) {
             throw new Error(error);
         }
+        setImageSource(null);
         reset();
     };
+    const onImageChange = (e: ChangeEvent<HTMLInputElement>) => {
+        if (!e.target.files) {
+            return;
+        }
 
+        setImageSource(e.target.files[0]);
+    };
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="p-20 flex flex-col gap-y-4">
             <h2 className="text-2xl font-bold">Thêm sản phẩm</h2>
@@ -62,7 +59,10 @@ export default function Admin() {
                 <label htmlFor="" className="text-xl font-semibold mb-2">
                     Ảnh:
                 </label>
-                <Input {...register('image')} type="file" />
+                {imageSource && (
+                    <Image src={URL.createObjectURL(imageSource)} alt="" width={500} height={500} />
+                )}
+                <Input {...register('image')} type="file" onChange={onImageChange} />
             </div>
             <div>
                 <label htmlFor="" className="text-xl font-semibold mb-2">
