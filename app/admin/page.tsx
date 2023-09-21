@@ -28,17 +28,20 @@ export default function Admin() {
     const onSubmit = async (data: any) => {
         const { image, name, weight, description } = data;
         const formData = new FormData();
-        formData.append('image', image[0]);
-        formData.append('name', name);
-        formData.append('weight', weight);
-        formData.append('description', description);
-        formData.append('category', category);
-        formData.append('material', material);
+        formData.append('Img', image[0]);
+        formData.append('TenSanPham', name);
+        formData.append('TrongLuongSanPham', weight);
+        formData.append('MoTa', description);
+        formData.append('LoaiTrangSucId', category);
+        formData.append('ChatLieuId', material);
         try {
-            const res = await fetch('<URL???>', {
-                method: 'POST',
-                body: formData,
-            });
+            const res = await fetch(
+                'https://webtiemvangkimcucser.azurewebsites.net//api/SanPham/ThemSanPham',
+                {
+                    method: 'POST',
+                    body: formData,
+                }
+            );
         } catch (error: any) {
             throw new Error(error);
         }
