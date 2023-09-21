@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -19,7 +20,10 @@ export default function CategoryCard({
             <Link
                 href={href}
                 passHref
-                className={`flex flex-col h-[172px] max-w-[172px] justify-center items-center gap-7 border rounded-md shadow-sm hover:shadow-lg transition-all duration-300 ${className}`}
+                className={cn(
+                    'flex flex-col h-[172px] max-w-[172px] justify-center items-center gap-7 border rounded-md shadow-sm hover:shadow-lg transition-all duration-300 text-primaryColor',
+                    className
+                )}
             >
                 <div className="h-[64px] overflow-hidden">
                     <Image

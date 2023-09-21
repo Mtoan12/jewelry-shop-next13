@@ -1,4 +1,4 @@
-import AdminCategory from './AdminCategory';
+import AdminCategory from "../../AdminCategory";
 
 export default function Admin() {
     return (
