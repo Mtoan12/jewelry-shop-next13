@@ -13,6 +13,10 @@ import { Textarea } from '@/components/ui/textarea';
 import Image from 'next/image';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import ReactLoading from 'react-loading';
+
+import path from 'path';
+import { v4 as uuidv4 } from 'uuid';
 export default function Admin() {
     const [imageSource, setImageSource] = useState<File | null>(null);
     const [category, setCategory] = useState('0');
@@ -28,12 +32,20 @@ export default function Admin() {
     const onSubmit = async (data: any) => {
         const { image, name, weight, description } = data;
         const formData = new FormData();
-        formData.append('Img', image[0]);
+        if (image && image[0]) {
+            const fileName = image[0].name;
+            const ext = path.parse(fileName).ext;
+            const newName = uuidv4() + ext;
+
+            const newFile = new File([image[0]], newName);
+            formData.append('Img', newFile);
+        }
         formData.append('TenSanPham', name);
         formData.append('TrongLuongSanPham', weight);
         formData.append('MoTa', description);
         formData.append('LoaiTrangSucId', category);
         formData.append('ChatLieuId', material);
+
         try {
             const res = await fetch(
                 'https://webtiemvangkimcucser.azurewebsites.net//api/SanPham/ThemSanPham',
@@ -43,6 +55,7 @@ export default function Admin() {
                 }
             );
         } catch (error: any) {
+            reset();
             throw new Error(error);
         }
         setImageSource(null);
@@ -129,8 +142,12 @@ export default function Admin() {
                 </Select>
             </div>
 
-            <Button type="submit" disabled={isSubmitting}>
-                Xác nhận
+            <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="flex justify-center items-center "
+            >
+                {isSubmitting ? <ReactLoading type="bubbles" color="white" /> : 'Xác nhận'}
             </Button>
         </form>
     );
