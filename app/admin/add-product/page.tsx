@@ -71,7 +71,7 @@ export default function Admin() {
         <form onSubmit={handleSubmit(onSubmit)} className="p-20 flex flex-col gap-y-4">
             <h2 className="text-2xl font-bold">Thêm sản phẩm</h2>
             <div>
-                <label htmlFor="" className="text-xl font-semibold mb-2">
+                <label htmlFor="image" className="text-xl font-semibold mb-2">
                     Ảnh:
                 </label>
                 {imageSource && (
@@ -80,23 +80,19 @@ export default function Admin() {
                 <Input {...register('image')} type="file" onChange={onImageChange} />
             </div>
             <div>
-                <label htmlFor="" className="text-xl font-semibold mb-2">
+                <label htmlFor="name" className="text-xl font-semibold mb-2">
                     Tên sản phẩm
                 </label>
                 <Input {...register('name')} placeholder="Nhập tên sản phẩm" />
             </div>
             <div>
-                <label htmlFor="" className="text-xl font-semibold mb-2">
+                <label htmlFor="weight" className="text-xl font-semibold mb-2">
                     Trọng lượng
                 </label>
-                <Input
-                    {...register('weight')}
-                    type="number"
-                    placeholder="Nhập trọng lượng sản phẩm (Chỉ)"
-                />
+                <Input {...register('weight')} placeholder="Nhập trọng lượng sản phẩm" />
             </div>
             <div>
-                <label htmlFor="" className="text-xl font-semibold mb-2">
+                <label htmlFor="description" className="text-xl font-semibold mb-2">
                     Mô tả
                 </label>
                 <Textarea {...register('description')} placeholder="Nhập Mô tả sản phẩm" />
