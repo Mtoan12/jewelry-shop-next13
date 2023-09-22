@@ -114,6 +114,7 @@ export default function Admin() {
                         <SelectItem value="6">Bông tai</SelectItem>
                         <SelectItem value="7">Mặt dây</SelectItem>
                         <SelectItem value="8">Hạt charm</SelectItem>
+                        <SelectItem value="9">Dây chuyền</SelectItem>
                     </SelectContent>
                 </Select>
             </div>
