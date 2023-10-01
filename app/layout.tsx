@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
 import './globals.css';
 import ScrollToTop from '@/components/ScrollToTop';
+import { Toaster } from '@/components/ui/toaster';
 
 const font = Open_Sans({ subsets: ['latin'] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 {children}
                 <Footer />
                 <ScrollToTop />
+                <Toaster />
             </body>
         </html>
     );

@@ -1,6 +1,6 @@
 const getAllProducts = async () => {
     const res = await fetch('https://webtiemvangkimcucser.azurewebsites.net/api/SanPham/GetAll', {
-        next: { revalidate: 120 },
+        next: { revalidate: 0 },
     });
 
     if (!res.ok) {

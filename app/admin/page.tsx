@@ -3,7 +3,7 @@ import AdminProductsList from './AdminProductsList';
 
 export default function Admin() {
     return (
-        <main className="py-[48px]">
+        <main className="pt-[48px] pb-[200px]">
             <AdminCategory />
         </main>
     );
