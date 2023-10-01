@@ -2,7 +2,9 @@ import { toast } from '@/components/ui/use-toast';
 import { deleteProduct } from '../api/deleteProduct';
 import getAllProducts from '../api/getAllProducts';
 import AdminProductCard from './AdminProductCard';
+import { useRouter } from 'next/navigation';
 export default async function AdminProductsList() {
+    const router = useRouter();
     const res = await getAllProducts();
     if (!res.result) {
         throw new Error(res.errorMessage);
@@ -14,6 +16,7 @@ export default async function AdminProductsList() {
         try {
             const res = await deleteProduct(productId);
             toast({ variant: 'success', title: 'Xóa thành công' });
+            router.refresh();
         } catch (error: any) {
             toast({ variant: 'destructive', title: 'Xóa thất bại', description: error.message });
             console.error(error);
