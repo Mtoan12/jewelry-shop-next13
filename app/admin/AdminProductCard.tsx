@@ -1,28 +1,24 @@
 'use client';
-import { useToast } from '@/components/ui/use-toast';
+import { Button } from '@/components/ui/button';
+import DialogCustomize from '@/components/DialogCustomize';
 import { Trash2 } from 'lucide-react';
 import Image from 'next/image';
-import { deleteProduct } from '../api/deleteProduct';
+import { useState } from 'react';
 
 type Props = {
     product: SanPham;
+    handleDeleteClick(productId: string): void;
 };
-export default function AdminProductCard({ product }: Props) {
-    const { toast } = useToast();
-
+export default function AdminProductCard({ product, handleDeleteClick }: Props) {
+    const [open, setOpen] = useState(false);
     if (!product) {
         return;
     }
 
-    const onDeleteClick = async (productId: string) => {
-        try {
-            const res = await deleteProduct(productId);
-            toast({ variant: 'success', title: 'Xóa thành công' });
-        } catch (error: any) {
-            toast({ variant: 'destructive', title: 'Xóa thất bại', description: error.message });
-            console.error(error);
-        }
-    };
+    const TrashComponent = (
+        <Trash2 className="absolute bottom-2 right-2 text-red-700 cursor-pointer hover:scale-110 transition-all" />
+    );
+
     return (
         <article className="relative max-w-full overflow-hidden flex flex-col h-[320px] justify-center items-center gap-2 text-primaryColor shadow-lg rounded-lg ">
             <Image
@@ -38,9 +34,31 @@ export default function AdminProductCard({ product }: Props) {
                 {product.loaiTrangSuc} - {product.chatLieu}
             </span>
             <span className="text-rose-700">{product.trongLuongSanPham}</span>
-            <Trash2
-                className="absolute bottom-2 right-2 text-red-700 cursor-pointer hover:scale-110 transition-all"
-                onClick={() => onDeleteClick(product.id)}
+            <DialogCustomize
+                open={open}
+                setOpen={setOpen}
+                TriggerComponent={TrashComponent}
+                HeaderTitle={<h2>Bạn có chắn chắn muốn xóa? </h2>}
+                HeaderDescription={<span>id: {product.id}</span>}
+                ContentComponent={
+                    <ul>
+                        <li>Tên: {product.tenSanPham}</li>
+                        <li>Loại sản phẩm: {product.loaiTrangSuc}</li>
+                        <li>Chất liệu: {product.chatLieu}</li>
+                        <li>Trọng lượng: {product.trongLuongSanPham}</li>
+                    </ul>
+                }
+                FooterComponent={
+                    <Button
+                        variant={'destructive'}
+                        onClick={() => {
+                            handleDeleteClick(product.id);
+                            setOpen(false);
+                        }}
+                    >
+                        Xóa
+                    </Button>
+                }
             />
         </article>
     );

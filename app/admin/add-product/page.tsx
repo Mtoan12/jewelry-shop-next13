@@ -17,6 +17,7 @@ import ReactLoading from 'react-loading';
 
 import path from 'path';
 import { v4 as uuidv4 } from 'uuid';
+import { useToast } from '@/components/ui/use-toast';
 export default function Admin() {
     const [imageSource, setImageSource] = useState<File | null>(null);
     const [category, setCategory] = useState('0');
@@ -28,6 +29,8 @@ export default function Admin() {
         setValue,
         reset,
     } = useForm();
+
+    const { toast } = useToast();
 
     const onSubmit = async (data: any) => {
         const { image, name, weight, description } = data;
@@ -53,7 +56,9 @@ export default function Admin() {
                     body: formData,
                 }
             );
+            toast({ variant: 'success', title: 'Thêm thành công' });
         } catch (error: any) {
+            toast({ variant: 'destructive', title: error.message });
             reset();
             throw new Error(error);
         }
