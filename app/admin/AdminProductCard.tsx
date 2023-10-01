@@ -4,6 +4,7 @@ import DialogCustomize from '@/components/DialogCustomize';
 import { Trash2 } from 'lucide-react';
 import Image from 'next/image';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 type Props = {
     product: SanPham;
@@ -11,6 +12,7 @@ type Props = {
 };
 export default function AdminProductCard({ product, handleDeleteClick }: Props) {
     const [open, setOpen] = useState(false);
+    const router = useRouter();
     if (!product) {
         return;
     }
@@ -54,6 +56,7 @@ export default function AdminProductCard({ product, handleDeleteClick }: Props) 
                         onClick={() => {
                             handleDeleteClick(product.id);
                             setOpen(false);
+                            router.refresh();
                         }}
                     >
                         Xóa
