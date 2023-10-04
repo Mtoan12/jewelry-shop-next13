@@ -22,20 +22,20 @@ export default function Admin({ searchParams }: Props) {
     return (
         <main className="container py-[48px] flex flex-col justify-center items-center gap-10">
             <AdminCategory />
-            <section className="shadow-md container grid grid-cols-12 gap-5 py-10">
-                <h1 className="text-3xl font-bold col-span-7">Danh sách sản phẩm</h1>
+            <section className="shadow-md container grid grid-cols-12 place-content-center text-center lg:text-start gap-5 py-10">
+                <h1 className="text-3xl font-bold col-span-12 lg:col-span-7">Danh sách sản phẩm</h1>
                 <Link
-                    className="place-self-end col-span-5 w-fit text-white bg-primaryColor px-3 py-2 hover:opacity-80 transition-all rounded-md"
+                    className="w-full col-span-12 lg:col-span-5 lg:place-self-end lg:w-fit text-white bg-primaryColor px-3 py-2 hover:opacity-80 transition-all rounded-md"
                     href="/admin/add-product"
                 >
                     Thêm sản phẩm
                 </Link>
-                <div className="relative w-[75%] col-span-7">
+                <div className="relative w-full lg:w-[75%] col-span-12 lg:col-span-7">
                     <SearchInput />
                 </div>
-                <div className=" col-span-5 place-self-end flex gap-2">
-                    <Button>Loại trang sức</Button>
-                    <Button>Chất liệu</Button>
+                <div className=" col-span-12 lg:col-span-5 place-self-end w-full flex gap-2 justify-stretch">
+                    <Button className="w-full">Loại trang sức</Button>
+                    <Button className="w-full">Chất liệu</Button>
                 </div>
             </section>
             <Suspense fallback="Đợi xíu...">
