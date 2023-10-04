@@ -2,13 +2,24 @@ import { toast } from '@/components/ui/use-toast';
 import { deleteProduct } from '../api/deleteProduct';
 import getAllProducts from '../api/getAllProducts';
 import AdminProductCard from './AdminProductCard';
-export default async function AdminProductsList() {
-    const res = await getAllProducts();
+import getProductByFilters from '../api/getProductByFilters';
+
+type Props = {
+    search: string;
+    page: number;
+    perPage: number;
+};
+export default async function AdminProductsList({ search, page, perPage }: Props) {
+    const res = await getProductByFilters(
+        { SearchKey: search },
+        { PageIndex: page, PageSize: perPage }
+    );
+    console.log({ page, perPage, res });
     if (!res.result) {
         throw new Error(res.errorMessage);
     }
 
-    const products = res.dataResult;
+    const products = res.dataResult.data;
     const handleDeleteClick = async (productId: string) => {
         'use server';
         try {

@@ -1,13 +1,24 @@
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 import { Suspense } from 'react';
 import AdminCategory from '../../AdminCategory';
 import AdminProducts from './AdminProducts';
-import Link from 'next/link';
-import { Input } from '@/components/ui/input';
-import { Select } from '@/components/ui/select';
-import { Button } from '@/components/ui/button';
-import { SearchIcon } from 'lucide-react';
 import SearchInput from './SearchInput';
-export default function Admin() {
+
+type Props = {
+    params?: {
+        num?: string;
+    };
+    searchParams?: {
+        search?: string;
+        page?: number;
+        perPage?: number;
+    };
+};
+export default function Admin({ searchParams }: Props) {
+    const search = searchParams?.search || '';
+    const page = searchParams?.page || 0;
+    const perPage = searchParams?.perPage || 12;
     return (
         <main className="container py-[48px] flex flex-col justify-center items-center gap-10">
             <AdminCategory />
@@ -28,7 +39,7 @@ export default function Admin() {
                 </div>
             </section>
             <Suspense fallback="Đợi xíu...">
-                <AdminProducts />
+                <AdminProducts search={search} page={page} perPage={perPage} />
             </Suspense>
         </main>
     );

@@ -17,8 +17,8 @@ type SanPham = {
 
 type Filter = {
     SearchKey: string;
-    ChatLieus: number[];
-    LoaiTrangSucs: number[];
+    ChatLieus?: number[];
+    LoaiTrangSucs?: number[];
 };
 
 type Pagination = {
