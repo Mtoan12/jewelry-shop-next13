@@ -9,7 +9,7 @@ export default function SearchInput() {
     const [searchTerm, setSearchTerm] = useState('');
     const router = useRouter();
     const setSearchParam = (search: string) => {
-        router.push(`/admin/products?search=${search}`);
+        router.push(`/admin/products?${search && 'search=' + search}`);
     };
 
     const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {

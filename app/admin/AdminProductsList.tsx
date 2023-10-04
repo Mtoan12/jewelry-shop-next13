@@ -14,7 +14,6 @@ export default async function AdminProductsList({ search, page, perPage }: Props
         { SearchKey: search },
         { PageIndex: page, PageSize: perPage }
     );
-    console.log({ page, perPage, res });
     if (!res.result) {
         throw new Error(res.errorMessage);
     }
