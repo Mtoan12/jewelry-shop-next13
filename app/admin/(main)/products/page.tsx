@@ -37,8 +37,8 @@ export default function Admin({ searchParams }: Props) {
                     <SearchInput />
                 </div>
                 <div className=" col-span-12 lg:col-span-5 place-self-end w-full flex gap-2 justify-stretch">
-                    <FilterDialog type="chatLieu" />
-                    <FilterDialog type="loaiTrangSuc" />
+                    {/* <FilterDialog type="chatLieu" />
+                    <FilterDialog type="loaiTrangSuc" /> */}
                     {/* <Button className="w-full">Loại trang sức</Button> */}
                     {/* <Button className="w-full">Chất liệu</Button> */}
                 </div>
