@@ -1,3 +1,9 @@
+import AdminCategory from './AdminCategory';
+
 export default function Admin() {
-    return <main className="pt-[48px] pb-[200px]"></main>;
+    return (
+        <main className="pt-[48px] pb-[200px]">
+            <AdminCategory />
+        </main>
+    );
 }
