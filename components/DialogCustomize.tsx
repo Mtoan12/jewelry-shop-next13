@@ -10,13 +10,13 @@ import {
 } from './ui/dialog';
 
 type Props = {
-    TriggerComponent: JSX.Element;
+    TriggerComponent?: JSX.Element | null;
     HeaderTitle?: JSX.Element | null;
     HeaderDescription?: JSX.Element | null;
     ContentComponent: JSX.Element;
     FooterComponent?: JSX.Element | null;
     open?: boolean;
-    setOpen(open: boolean): void;
+    setOpen?(open: boolean): void;
 };
 export default function DialogCustomize({
     TriggerComponent,
@@ -25,7 +25,7 @@ export default function DialogCustomize({
     ContentComponent,
     FooterComponent = null,
     open = false,
-    setOpen,
+    setOpen = () => {},
 }: Props) {
     return (
         <Dialog open={open} onOpenChange={setOpen}>

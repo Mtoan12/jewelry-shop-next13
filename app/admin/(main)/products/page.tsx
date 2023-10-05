@@ -1,9 +1,10 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Suspense } from 'react';
-import AdminCategory from '../../AdminCategory';
 import AdminProducts from './AdminProducts';
 import SearchInput from './SearchInput';
+import ProductsListSkeleton from '../../loading-components/ProductsListSkeleton';
+import FilterDialog from './FilterDialog';
 
 type Props = {
     params?: {
@@ -21,7 +22,6 @@ export default function Admin({ searchParams }: Props) {
     const perPage = searchParams?.perPage || 12;
     return (
         <main className="container py-[48px] flex flex-col justify-center items-center gap-10">
-            <AdminCategory />
             <section className="shadow-md container grid grid-cols-12 place-content-center text-center lg:text-start gap-5 py-10">
                 <h1 className="text-3xl font-bold col-span-12 lg:col-span-7">Danh sách sản phẩm</h1>
                 <Link
@@ -34,11 +34,13 @@ export default function Admin({ searchParams }: Props) {
                     <SearchInput />
                 </div>
                 <div className=" col-span-12 lg:col-span-5 place-self-end w-full flex gap-2 justify-stretch">
-                    <Button className="w-full">Loại trang sức</Button>
-                    <Button className="w-full">Chất liệu</Button>
+                    <FilterDialog type="chatLieu" />
+                    <FilterDialog type="loaiTrangSuc" />
+                    {/* <Button className="w-full">Loại trang sức</Button> */}
+                    {/* <Button className="w-full">Chất liệu</Button> */}
                 </div>
             </section>
-            <Suspense fallback="Đợi xíu...">
+            <Suspense fallback={<ProductsListSkeleton size={12} />}>
                 <AdminProducts search={search} page={page} perPage={perPage} />
             </Suspense>
         </main>

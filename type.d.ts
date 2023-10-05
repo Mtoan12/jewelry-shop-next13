@@ -5,6 +5,13 @@ type ChatLieu = {
     sanPhams: null;
 };
 
+type LoaiTrangSuc = {
+    id: number;
+    loaiTrangSuc: string;
+    moTa: string | null;
+    sanPhams: null;
+};
+
 type SanPham = {
     id: string;
     imgUrl: string;
