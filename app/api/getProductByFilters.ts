@@ -1,10 +1,10 @@
 type Arguments = {};
 
-const getProductByFilters = async (filter: Filter, pagination: Pagination) => {
+const getProductByFilters = async (filter: string, pagination: Pagination) => {
     const res = await fetch(
-        `https://webtiemvangkimcucser.azurewebsites.net/api/SanPham/SearchSanPham?filter=${encodeURIComponent(
-            JSON.stringify(filter)
-        )}&pagination=${encodeURIComponent(JSON.stringify(pagination))}`,
+        `https://webtiemvangkimcucser.azurewebsites.net/api/SanPham/SearchSanPham?filter=${filter}&pagination=${encodeURIComponent(
+            JSON.stringify(pagination)
+        )}`,
         {
             next: { revalidate: 0 },
         }

@@ -6,21 +6,24 @@ import SearchInput from './SearchInput';
 import ProductsListSkeleton from '../../loading-components/ProductsListSkeleton';
 import FilterDialog from './FilterDialog';
 import AdminCategory from '../../AdminCategory';
+import FilterProduct from './FilterProduct';
 
 type Props = {
     params?: {
         num?: string;
     };
     searchParams?: {
-        search?: string;
+        filters?: string;
         page?: number;
         perPage?: number;
     };
 };
 export default function Admin({ searchParams }: Props) {
-    const search = searchParams?.search || '';
+    const filters = searchParams?.filters || '';
     const page = searchParams?.page || 0;
     const perPage = searchParams?.perPage || 12;
+
+    
     return (
         <main className="container py-[48px] flex flex-col justify-center items-center gap-10">
             <AdminCategory />
@@ -33,18 +36,10 @@ export default function Admin({ searchParams }: Props) {
                 >
                     Thêm sản phẩm
                 </Link>
-                <div className="relative w-full lg:w-[75%] col-span-12 lg:col-span-7">
-                    <SearchInput />
-                </div>
-                <div className=" col-span-12 lg:col-span-5 place-self-end w-full flex gap-2 justify-stretch">
-                    <FilterDialog type="chatLieu" />
-                    <FilterDialog type="loaiTrangSuc" />
-                    {/* <Button className="w-full">Loại trang sức</Button> */}
-                    {/* <Button className="w-full">Chất liệu</Button> */}
-                </div>
+                <FilterProduct />
             </section>
             <Suspense fallback={<ProductsListSkeleton size={12} />}>
-                <AdminProducts search={search} page={page} perPage={perPage} />
+                <AdminProducts filters={filters} page={page} perPage={perPage} />
             </Suspense>
         </main>
     );

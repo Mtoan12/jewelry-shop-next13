@@ -3,7 +3,7 @@ import getAllProducts from '@/app/api/getAllProducts';
 import AdminProductsList from '../../AdminProductsList';
 
 type Props = {
-    search: string;
+    filters: string;
     page: number;
     perPage: number;
 };

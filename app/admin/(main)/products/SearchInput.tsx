@@ -5,8 +5,11 @@ import { SearchIcon } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { ChangeEvent, useState } from 'react';
 
-export default function SearchInput() {
-    const [searchTerm, setSearchTerm] = useState('');
+type Props = {
+    searchTerm: string;
+    setSearchTerm: (string: string) => void;
+};
+export default function SearchInput({ searchTerm, setSearchTerm }: Props) {
     const router = useRouter();
     const setSearchParam = (search: string) => {
         router.push(`/admin/products?${search && 'search=' + search}`);
@@ -14,9 +17,6 @@ export default function SearchInput() {
 
     const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value);
-
-        const funcDebounce = debounce(setSearchParam, 50);
-        funcDebounce(e.target.value);
     };
 
     return (

@@ -5,15 +5,12 @@ import AdminProductCard from './AdminProductCard';
 import getProductByFilters from '../api/getProductByFilters';
 
 type Props = {
-    search: string;
+    filters: string;
     page: number;
     perPage: number;
 };
-export default async function AdminProductsList({ search, page, perPage }: Props) {
-    const res = await getProductByFilters(
-        { SearchKey: search },
-        { PageIndex: page, PageSize: perPage }
-    );
+export default async function AdminProductsList({ filters, page, perPage }: Props) {
+    const res = await getProductByFilters(filters, { PageIndex: page, PageSize: perPage });
     if (!res.result) {
         throw new Error(res.errorMessage);
     }
