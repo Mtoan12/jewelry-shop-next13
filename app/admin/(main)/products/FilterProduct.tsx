@@ -38,15 +38,6 @@ export default function FilterProduct({ filters }: Props) {
         filters();
     }, [searchTerm, chatLieus, loaiTrangSucs, router]);
 
-    const showFilters = (type: 'chatLieu' | 'loaiTrangSuc', filters: number[]) => {
-        if (filters.length === 0) {
-            return;
-        }
-        const data = type === 'chatLieu' ? CHATLIEUS : LOAITRANGSUCS;
-        const result = data.filter((item) => filters.includes(item.id));
-
-        return result;
-    };
     const showChatLieus = (filters: number[]) => {
         if (filters.length === 0) {
             return;
