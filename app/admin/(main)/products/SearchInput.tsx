@@ -20,7 +20,7 @@ export default function SearchInput() {
     };
 
     return (
-        <>
+        <form onSubmit={() => setSearchParam(searchTerm)}>
             <Input
                 className="w-full pl-10"
                 placeholder="Tìm kiếm"
@@ -28,6 +28,6 @@ export default function SearchInput() {
                 onChange={handleSearchChange}
             />
             <SearchIcon className="absolute top-[50%] translate-y-[-50%] left-2 text-gray-300" />
-        </>
+        </form>
     );
 }

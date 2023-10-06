@@ -11,13 +11,13 @@ import {
 } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
 import Image from 'next/image';
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import ReactLoading from 'react-loading';
 
+import { useToast } from '@/components/ui/use-toast';
 import path from 'path';
 import { v4 as uuidv4 } from 'uuid';
-import { useToast } from '@/components/ui/use-toast';
 export default function Admin() {
     const [imageSource, setImageSource] = useState<File | null>(null);
     const [category, setCategory] = useState('0');
