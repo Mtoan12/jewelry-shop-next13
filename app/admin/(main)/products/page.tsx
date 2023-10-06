@@ -1,11 +1,8 @@
-import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Suspense } from 'react';
-import AdminProducts from './AdminProducts';
-import SearchInput from './SearchInput';
-import ProductsListSkeleton from '../../loading-components/ProductsListSkeleton';
-import FilterDialog from './FilterDialog';
 import AdminCategory from '../../AdminCategory';
+import ProductsListSkeleton from '../../loading-components/ProductsListSkeleton';
+import AdminProducts from './AdminProducts';
 import FilterProduct from './FilterProduct';
 
 type Props = {
@@ -19,11 +16,10 @@ type Props = {
     };
 };
 export default function Admin({ searchParams }: Props) {
-    const filters = searchParams?.filters || '';
+    const filters = searchParams?.filters || encodeURIComponent(JSON.stringify({ SearchKey: '' }));
     const page = searchParams?.page || 0;
     const perPage = searchParams?.perPage || 12;
 
-    
     return (
         <main className="container py-[48px] flex flex-col justify-center items-center gap-10">
             <AdminCategory />
@@ -36,7 +32,7 @@ export default function Admin({ searchParams }: Props) {
                 >
                     Thêm sản phẩm
                 </Link>
-                <FilterProduct />
+                <FilterProduct filters={filters} />
             </section>
             <Suspense fallback={<ProductsListSkeleton size={12} />}>
                 <AdminProducts filters={filters} page={page} perPage={perPage} />

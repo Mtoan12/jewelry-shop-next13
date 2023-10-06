@@ -1,31 +1,27 @@
 'use client';
 
-import getAllChatLieus from '@/app/api/getAllChatLieus';
-import getAllLoaiTrangSucs from '@/app/api/getAllLoaiTrangSucs';
 import DialogCustomize from '@/components/DialogCustomize';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/components/ui/use-toast';
-import { useEffect, useState } from 'react';
 import { CHATLIEUS, LOAITRANGSUCS } from '@/constance/constance';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 
 type Props = {
     type: 'chatLieu' | 'loaiTrangSuc';
-};
-
-type Content = {
-    title: '';
-    content: [];
+    checksList: number[];
+    setChecksList: Dispatch<SetStateAction<number[]>>;
 };
 
 const titleMap = {
     chatLieu: 'Chọn chất liệu',
     loaiTrangSuc: 'Chọn loại trang sức',
 };
-export default function FilterDialog({ type }: Props) {
+export default function FilterDialog({ type, checksList, setChecksList }: Props) {
     const title = titleMap[type] || '';
     const [content, setContent] = useState<any[] | null>(null);
     const [open, setOpen] = useState(false);
+    const [checks, setChecks] = useState(checksList);
     const { toast } = useToast();
 
     useEffect(() => {
@@ -48,25 +44,61 @@ export default function FilterDialog({ type }: Props) {
         fetchData();
     }, [toast, type]);
 
+    const handleRenewClick = () => {
+        setChecks([]);
+    };
+
+    const handleConfirmClick = () => {
+        setChecksList(checks);
+        setOpen(false);
+    };
+
+    const handleCheck = (id: number, checked: any) => {
+        if (checked) {
+            setChecks([...checks, id]);
+        } else {
+            const index = checks.indexOf(id);
+            const newArr = [...checks];
+            newArr.splice(index, 1);
+            setChecks([...newArr]);
+        }
+    };
+
     const Trigger = <Button className="w-full">{title}</Button>;
-    const HeaderTitle = <h2 className="w-full text-center">{title}</h2>;
-    const ContentComponent = (
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pl-2 gap-5">
-            {content &&
-                content.map((item) => {
-                    const name = type === 'chatLieu' ? item?.chatLieu : item?.loaiTrangSuc;
-                    return (
-                        <li key={item.id} className="flex items-center">
-                            <Checkbox id={item.id} />
-                            <label htmlFor={item.id} className="pl-1 text-sm cursor-pointer">
-                                {name}
-                            </label>
-                        </li>
-                    );
-                })}
-        </ul>
+    const HeaderTitle = <span className="w-full text-center">{title}</span>;
+    const Footer = (
+        <>
+            <Button variant="secondary" className="w-full mt-2 " onClick={handleRenewClick}>
+                Làm mới
+            </Button>
+            <Button className="w-full mt-2" onClick={handleConfirmClick}>
+                Xác nhận
+            </Button>
+        </>
     );
 
+    const ContentComponent = (
+        <form onSubmit={handleConfirmClick}>
+            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pl-2 gap-5">
+                {content &&
+                    content.map((item) => {
+                        const name = type === 'chatLieu' ? item?.chatLieu : item?.loaiTrangSuc;
+                        return (
+                            <li key={item.id} className="flex items-center">
+                                <Checkbox
+                                    id={item.id}
+                                    checked={checks.includes(item.id)}
+                                    onCheckedChange={(checked) => handleCheck(item.id, checked)}
+                                />
+                                <label htmlFor={item.id} className="pl-1 text-sm cursor-pointer">
+                                    {name}
+                                </label>
+                            </li>
+                        );
+                    })}
+            </ul>
+        </form>
+    );
     return (
         <DialogCustomize
             open={open}
@@ -74,6 +106,7 @@ export default function FilterDialog({ type }: Props) {
             TriggerComponent={Trigger}
             HeaderTitle={HeaderTitle}
             ContentComponent={ContentComponent}
+            FooterComponent={Footer}
         />
     );
 }

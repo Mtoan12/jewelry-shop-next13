@@ -12,7 +12,7 @@ type Props = {
 export default function SearchInput({ searchTerm, setSearchTerm }: Props) {
     const router = useRouter();
     const setSearchParam = (search: string) => {
-        router.push(`/admin/products?${search && 'search=' + search}`);
+        setSearchTerm(search);
     };
 
     const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
