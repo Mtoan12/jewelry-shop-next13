@@ -20,6 +20,9 @@ type SanPham = {
     moTa: string | null;
     chatLieu: string;
     loaiTrangSuc: string;
+    createdDate: string;
+    updatedDate: string | null;
+    isDeleted: boolean;
 };
 
 type Filter = {
@@ -31,4 +34,26 @@ type Filter = {
 type Pagination = {
     PageIndex: number;
     PageSize: number;
+};
+
+type ProductsApi = {
+    result: boolean;
+    errorMessage: string;
+    dataResult: {
+        data: [
+            {
+                id: string;
+                imgUrl: string;
+                tenSanPham: string;
+                trongLuongSanPham: string;
+                chatLieuId: number;
+                loaiTrangSucId: number;
+                moTa: string;
+                createdDate: string;
+                updatedDate: string | null;
+                isDeleted: boolean;
+            }
+        ];
+        totalRows: number;
+    };
 };

@@ -9,20 +9,20 @@ type Props = {
 
 export default function ProductCard({ imgUrl, tenSanPham, trongLuongSanPham }: Props) {
     return (
-        <div className="flex flex-col justify-center">
-            <div className="h-[200px] rounded-md shadow-md overflow-hidden">
-                <Link href={'/'}>
-                    <Image
-                        className="w-full object-cover hover:scale-105 transition-all duration-300"
-                        src={imgUrl}
-                        alt={tenSanPham}
-                        width={200}
-                        height={200}
-                    />
-                </Link>
-            </div>
-            <h3 className="text-primaryColor text-center">{tenSanPham}</h3>
-            <span className="text-secondaryColor text-center">{trongLuongSanPham}</span>
-        </div>
+        <article className="cursor-pointer group max-w-[200px] overflow-hidden flex flex-col h-[320px] justify-center items-center gap-2 text-primaryColor shadow-lg rounded-lg ">
+            <Image
+                src={imgUrl}
+                alt={tenSanPham}
+                width={100}
+                height={100}
+                className="w-full object-contain h-[180px] card__image group-hover:scale-110 transition-all duration-300"
+            />
+
+            <span className="text-md font-medium">{tenSanPham}</span>
+            {/* <span>
+                    {loaiTrangSuc} - {chatLieu}
+                </span> */}
+            <span className="text-rose-700">{trongLuongSanPham}</span>
+        </article>
     );
 }
