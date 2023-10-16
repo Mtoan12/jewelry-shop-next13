@@ -16,26 +16,18 @@ export default async function AdminProductsList({ filters, page, perPage }: Prop
     }
 
     const products = res.dataResult.data;
-    const handleDeleteClick = async (productId: string) => {
-        'use server';
-        try {
-            const res = await deleteProduct(productId);
-            toast({ variant: 'success', title: 'Xóa thành công' });
-        } catch (error: any) {
-            toast({ variant: 'destructive', title: 'Xóa thất bại', description: error.message });
-            console.error(error);
-        }
-    };
     if (!products) {
         return;
     }
+
+    console.log(products);
 
     return (
         <section>
             <ul className="w-screen lg:w-[1200px] px-6 mx-auto products-list">
                 {products.map((product: SanPham) => (
                     <li key={product.id}>
-                        <AdminProductCard product={product} handleDeleteClick={handleDeleteClick} />
+                        <AdminProductCard product={product} />
                     </li>
                 ))}
             </ul>

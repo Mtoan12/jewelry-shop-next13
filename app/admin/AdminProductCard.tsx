@@ -5,17 +5,29 @@ import { Trash2 } from 'lucide-react';
 import Image from 'next/image';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { deleteProduct } from '../api/deleteProduct';
+import { useToast } from '@/components/ui/use-toast';
 
 type Props = {
     product: SanPham;
-    handleDeleteClick(productId: string): void;
 };
-export default function AdminProductCard({ product, handleDeleteClick }: Props) {
+export default function AdminProductCard({ product }: Props) {
     const [open, setOpen] = useState(false);
+    const { toast } = useToast();
     const router = useRouter();
     if (!product) {
         return;
     }
+
+    const handleDeleteClick = async (productId: string) => {
+        try {
+            const res = await deleteProduct(productId);
+            toast({ variant: 'success', title: 'Xóa thành công' });
+        } catch (error: any) {
+            toast({ variant: 'destructive', title: 'Xóa thất bại', description: error.message });
+            console.error(error);
+        }
+    };
 
     const TrashComponent = (
         <Trash2 className="absolute bottom-2 right-2 text-red-700 cursor-pointer hover:scale-110 transition-all" />

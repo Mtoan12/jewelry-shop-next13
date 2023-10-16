@@ -46,8 +46,8 @@ type ProductsApi = {
                 imgUrl: string;
                 tenSanPham: string;
                 trongLuongSanPham: string;
-                chatLieuId: number;
-                loaiTrangSucId: number;
+                chatLieu: string;
+                loaiTrangSuc: string;
                 moTa: string;
                 createdDate: string;
                 updatedDate: string | null;
