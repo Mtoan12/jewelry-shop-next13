@@ -15,17 +15,19 @@ export default async function ProductDetail({ id }: Props) {
     const product = data.dataResult;
     return (
         <main className="container mx-auto py-12">
-            <section className="flex flex-col lg:flex-row justify-center items-start gap-8 ">
+            <section className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-8 ">
                 <div className="overflow-hidden">
                     <Image
-                        src={product.imgUrl}
+                        src={
+                            'https://trangsucdaquy.vn/wp-content/uploads/2023/10/Nhan-Sapphire-Sao-Xanh-Vang-2-Mau-NM69.jpg?v=1698145097'
+                        }
                         alt={product.tenSanPham}
                         height={420}
                         width={420}
                         className="w-full"
                     />
                 </div>
-                <div className="flex flex-col gap-5 max-w-[320px]">
+                <div className="flex flex-col gap-5 w-full lg:max-w-[320px]">
                     <h2 className="text-3xl font-bold text-primaryColor leading-8">
                         {product.tenSanPham}
                     </h2>
