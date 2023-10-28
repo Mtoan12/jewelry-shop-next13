@@ -18,9 +18,7 @@ export default async function ProductDetail({ id }: Props) {
             <section className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-8 ">
                 <div className="overflow-hidden">
                     <Image
-                        src={
-                            'https://trangsucdaquy.vn/wp-content/uploads/2023/10/Nhan-Sapphire-Sao-Xanh-Vang-2-Mau-NM69.jpg?v=1698145097'
-                        }
+                        src={product.imgUrl}
                         alt={product.tenSanPham}
                         height={420}
                         width={420}
