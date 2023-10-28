@@ -12,13 +12,12 @@ export default function ProductsList({ products }: Props) {
                 {products &&
                     products.map((product) => (
                         <li key={product.id} className="max-w-[200px]">
-                            <Link href={`/product/${product.id}`}>
-                                <ProductCard
-                                    imgUrl={product.imgUrl}
-                                    tenSanPham={product.tenSanPham}
-                                    trongLuongSanPham={product.trongLuongSanPham}
-                                />
-                            </Link>
+                            <ProductCard
+                                id={product.id}
+                                imgUrl={product.imgUrl}
+                                tenSanPham={product.tenSanPham}
+                                trongLuongSanPham={product.trongLuongSanPham}
+                            />
                         </li>
                     ))}
             </ul>

@@ -2,14 +2,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 type Props = {
+    id: string;
     imgUrl: string;
     tenSanPham: string;
     trongLuongSanPham: number;
 };
 
-export default function ProductCard({ imgUrl, tenSanPham, trongLuongSanPham }: Props) {
+export default function ProductCard({ id, imgUrl, tenSanPham, trongLuongSanPham }: Props) {
     return (
-        <article className="cursor-pointer group max-w-[200px] overflow-hidden flex flex-col h-[320px] justify-center items-center gap-2 text-primaryColor shadow-lg rounded-lg ">
+        <Link
+            href={`/san-pham/${id}`}
+            className="cursor-pointer group max-w-[200px] overflow-hidden flex flex-col h-[320px] justify-center items-center gap-2 text-primaryColor shadow-lg rounded-lg "
+        >
             <Image
                 src={imgUrl}
                 alt={tenSanPham}
@@ -23,6 +27,6 @@ export default function ProductCard({ imgUrl, tenSanPham, trongLuongSanPham }: P
                     {loaiTrangSuc} - {chatLieu}
                 </span> */}
             <span className="text-rose-700">{trongLuongSanPham}</span>
-        </article>
+        </Link>
     );
 }

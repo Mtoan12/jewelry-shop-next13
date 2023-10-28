@@ -20,8 +20,6 @@ export default async function AdminProductsList({ filters, page, perPage }: Prop
         return;
     }
 
-    console.log(products);
-
     return (
         <section>
             <ul className="w-screen lg:w-[1200px] px-6 mx-auto products-list">
