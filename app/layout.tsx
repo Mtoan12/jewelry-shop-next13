@@ -1,10 +1,10 @@
+import ScrollToTop from '@/components/ScrollToTop';
 import Footer from '@/components/footer/Footer';
 import Header from '@/components/header/Header';
+import { Toaster } from '@/components/ui/toaster';
 import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
 import './globals.css';
-import ScrollToTop from '@/components/ScrollToTop';
-import LoadingBar from './LoadingBar';
 
 const font = Open_Sans({ subsets: ['latin'] });
 
@@ -22,6 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 {children}
                 <Footer />
                 <ScrollToTop />
+                <Toaster />
             </body>
         </html>
     );

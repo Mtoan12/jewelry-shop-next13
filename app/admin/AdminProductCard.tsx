@@ -68,7 +68,7 @@ export default function AdminProductCard({ product }: Props) {
                         onClick={() => {
                             handleDeleteClick(product.id);
                             setOpen(false);
-                            router.refresh();
+                            // router.refresh();
                         }}
                     >
                         Xóa
