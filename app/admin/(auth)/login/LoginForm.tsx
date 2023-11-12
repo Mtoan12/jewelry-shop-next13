@@ -13,7 +13,7 @@ export default function LoginForm() {
         formState: { errors, isLoading },
     } = useForm();
 
-    const onSubmit = async (data: any, e: Event) => {
+    const onSubmit = async (data: any, e: any) => {
         e.preventDefault();
         try {
             const res = await authApi.login(data);
@@ -26,7 +26,7 @@ export default function LoginForm() {
             } else {
                 toast({
                     variant: 'destructive',
-                    title: 'Đăng nhập thất baị',
+                    title: 'Đăng nhập thất bại',
                     description: res?.errorMessage,
                 });
             }
