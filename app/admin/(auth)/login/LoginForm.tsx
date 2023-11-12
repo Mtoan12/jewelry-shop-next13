@@ -13,7 +13,8 @@ export default function LoginForm() {
         formState: { errors, isLoading },
     } = useForm();
 
-    const onSubmit = async (data: any) => {
+    const onSubmit = async (data: any, e: Event) => {
+        e.preventDefault();
         try {
             const res = await authApi.login(data);
             if (res?.result) {
@@ -22,6 +23,12 @@ export default function LoginForm() {
                     title: 'Đăng nhập thành công',
                 });
                 window.location.href = '/admin';
+            } else {
+                toast({
+                    variant: 'destructive',
+                    title: 'Đăng nhập thất baị',
+                    description: res?.errorMessage,
+                });
             }
         } catch (error: any) {
             toast({
@@ -72,7 +79,7 @@ export default function LoginForm() {
             </div>
 
             <button
-                className="w-full  bg-primaryColor hover:bg-primaryColor-hover transition-all py-3 text-white font-semibold rounded mt-5"
+                className="w-full bg-primaryColor hover:bg-primaryColor-hover transition-all py-3 text-white font-semibold rounded mt-5"
                 type="submit"
                 disabled={isLoading}
             >
