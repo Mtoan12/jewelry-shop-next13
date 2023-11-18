@@ -3,15 +3,17 @@ import HomeCategories from '@/components/home/HomeCategories';
 import TitleProvider from '@/components/home/TitleProvider';
 import { Suspense } from 'react';
 import HomePreviewSection from './HomePreviewSection';
-import ProductCardSkeleton from './admin/loading-components/ProductCardSkeleton';
 import getProductsByCategory from './api/getProductsByCategory';
 import './home.scss';
+import ProductCardSkeleton from '@/components/loading/ProductCardSkeleton';
 
 export default async function Home() {
     const numberOfCate = 5;
     const contents: Array<Promise<ProductsApi>> = [];
     for (let i = 1; i <= numberOfCate; i++) {
-        const products = getProductsByCategory(i, 6);
+        const page = 0;
+        const perPage = 6;
+        const products = getProductsByCategory(i, page, perPage);
 
         contents.push(products);
     }
@@ -27,7 +29,7 @@ export default async function Home() {
                     <HomePreviewSection title="Nhẫn nam" products={contents[0]} />
                 </Suspense>
                 <Suspense fallback={<ProductCardSkeleton />}>
-                    <HomePreviewSection title="Nhẫn nũe" products={contents[1]} />
+                    <HomePreviewSection title="Nhẫn nữ" products={contents[1]} />
                 </Suspense>
                 <Suspense fallback={<ProductCardSkeleton />}>
                     <HomePreviewSection title="Nhẫn đôi" products={contents[2]} />
