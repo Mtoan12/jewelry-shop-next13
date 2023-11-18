@@ -1,4 +1,4 @@
-import ProductsList from '@/components/ProductsList';
+import ProductsList from '@/components/products/ProductsList';
 import TitleProvider from '@/components/home/TitleProvider';
 
 type Props = {

@@ -5,6 +5,7 @@ import { Toaster } from '@/components/ui/toaster';
 import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
 import './globals.css';
+import NextTopLoader from 'nextjs-toploader';
 
 const font = Open_Sans({ subsets: ['latin'] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en">
             <body className={`${font.className}`}>
+                <NextTopLoader />
                 <Header />
                 {children}
                 <Footer />

@@ -22,17 +22,32 @@ export default function NavBar() {
                             Nhẫn
                         </NavigationMenuTrigger>
                         <NavigationMenuContent className="flex flex-col gap-2 py-2">
-                            <Link href="/" className="header__navbar-title" legacyBehavior passHref>
+                            <Link
+                                href="/nhan-nam"
+                                className="header__navbar-title"
+                                legacyBehavior
+                                passHref
+                            >
                                 <NavigationMenuLink className={'header__sub-nav'}>
                                     Nhẫn nam
                                 </NavigationMenuLink>
                             </Link>
-                            <Link href="/" className="header__navbar-title" legacyBehavior passHref>
+                            <Link
+                                href="/nhan-nu"
+                                className="header__navbar-title"
+                                legacyBehavior
+                                passHref
+                            >
                                 <NavigationMenuLink className={'header__sub-nav'}>
                                     Nhẫn nữ
                                 </NavigationMenuLink>
                             </Link>
-                            <Link href="/" className="header__navbar-title" legacyBehavior passHref>
+                            <Link
+                                href="/nhan-doi-nam-nu"
+                                className="header__navbar-title"
+                                legacyBehavior
+                                passHref
+                            >
                                 <NavigationMenuLink className={'header__sub-nav'}>
                                     Nhẫn đôi nam - nữ
                                 </NavigationMenuLink>
@@ -41,7 +56,12 @@ export default function NavBar() {
                     </NavigationMenuItem>
 
                     <NavigationMenuItem>
-                        <Link href="/" className="header__navbar-title" legacyBehavior passHref>
+                        <Link
+                            href="/vong-tay"
+                            className="header__navbar-title"
+                            legacyBehavior
+                            passHref
+                        >
                             <NavigationMenuLink
                                 className={` ${navigationMenuTriggerStyle()} header__navbar-title`}
                             >
@@ -50,7 +70,12 @@ export default function NavBar() {
                         </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <Link href="/" className="header__navbar-title" legacyBehavior passHref>
+                        <Link
+                            href="/lac-tay"
+                            className="header__navbar-title"
+                            legacyBehavior
+                            passHref
+                        >
                             <NavigationMenuLink
                                 className={` ${navigationMenuTriggerStyle()} header__navbar-title`}
                             >
@@ -59,7 +84,12 @@ export default function NavBar() {
                         </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <Link href="/" className="header__navbar-title" legacyBehavior passHref>
+                        <Link
+                            href="/bong-tai"
+                            className="header__navbar-title"
+                            legacyBehavior
+                            passHref
+                        >
                             <NavigationMenuLink
                                 className={` ${navigationMenuTriggerStyle()} header__navbar-title`}
                             >
@@ -68,7 +98,12 @@ export default function NavBar() {
                         </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <Link href="/" className="header__navbar-title" legacyBehavior passHref>
+                        <Link
+                            href="/mat-day"
+                            className="header__navbar-title"
+                            legacyBehavior
+                            passHref
+                        >
                             <NavigationMenuLink
                                 className={` ${navigationMenuTriggerStyle()} header__navbar-title`}
                             >
@@ -77,7 +112,12 @@ export default function NavBar() {
                         </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <Link href="/" className="header__navbar-title" legacyBehavior passHref>
+                        <Link
+                            href="/hat-charm"
+                            className="header__navbar-title"
+                            legacyBehavior
+                            passHref
+                        >
                             <NavigationMenuLink
                                 className={` ${navigationMenuTriggerStyle()} header__navbar-title`}
                             >
@@ -86,7 +126,12 @@ export default function NavBar() {
                         </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <Link href="/" className="header__navbar-title" legacyBehavior passHref>
+                        <Link
+                            href="/lien-he"
+                            className="header__navbar-title"
+                            legacyBehavior
+                            passHref
+                        >
                             <NavigationMenuLink
                                 className={` ${navigationMenuTriggerStyle()} header__navbar-title`}
                             >

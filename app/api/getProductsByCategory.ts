@@ -1,6 +1,6 @@
 const getProductsByCategory = async (categoryId: number, page: number, perPage: number) => {
     const filter = encodeURIComponent(JSON.stringify({ LoaiTrangSucs: [categoryId] }));
-    const pagination = encodeURIComponent(JSON.stringify({ PageSize: perPage, PageIndex: 0 }));
+    const pagination = encodeURIComponent(JSON.stringify({ PageSize: perPage, PageIndex: page }));
     const rs = await fetch(
         `https://webtiemvangkimcucser.azurewebsites.net/api/SanPham/SearchSanPham?filter=${filter}&pagination=${pagination}`,
         { next: { revalidate: 0 } }

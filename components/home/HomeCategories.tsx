@@ -20,13 +20,17 @@ export default function HomeCategories() {
                     />
                 </li>
                 <li>
-                    <CategoryCard icoUrl="/category/ring1.png" title="Nhẫn nam" />
+                    <CategoryCard href="/nhan-nam" icoUrl="/category/ring1.png" title="Nhẫn nam" />
                 </li>
                 <li>
-                    <CategoryCard href="/" icoUrl="/category/ring2.png" title="Nhẫn nữ" />
+                    <CategoryCard href="/nhan-nu" icoUrl="/category/ring2.png" title="Nhẫn nữ" />
                 </li>
                 <li>
-                    <CategoryCard href="/" icoUrl="/category/ring3.png" title="Nhẫn đôi nam - nữ" />
+                    <CategoryCard
+                        href="/nhan-doi-nam-nu"
+                        icoUrl="/category/ring3.png"
+                        title="Nhẫn đôi nam - nữ"
+                    />
                 </li>
             </ul>
         );
@@ -37,22 +41,26 @@ export default function HomeCategories() {
                 <CategoryCard icoUrl="/category/ring3.png" title="Nhẫn" />
             </li>
             <li>
-                <CategoryCard href="/" icoUrl="/category/bracelet.png" title="Vòng tay" />
+                <CategoryCard href="/vong-tay" icoUrl="/category/bracelet.png" title="Vòng tay" />
             </li>
             <li>
-                <CategoryCard href="/" icoUrl="/category/pendant.png" title="Lắc tay" />
+                <CategoryCard href="/lac-tay" icoUrl="/category/pendant.png" title="Lắc tay" />
             </li>
             <li>
-                <CategoryCard href="/" icoUrl="/category/earrings.png" title="Bông tai" />
+                <CategoryCard href="/bong-tai" icoUrl="/category/earrings.png" title="Bông tai" />
             </li>
             <li>
-                <CategoryCard href="/" icoUrl="/category/necklace.png" title="Mặt dây" />
+                <CategoryCard href="/mat-day" icoUrl="/category/necklace.png" title="Mặt dây" />
             </li>
             <li>
-                <CategoryCard href="/" icoUrl="/category/charm.png" title="Hạt charm" />
+                <CategoryCard href="/hat-charm" icoUrl="/category/charm.png" title="Hạt charm" />
             </li>
             <li>
-                <CategoryCard href="/" icoUrl="/category/all-cate.png" title="Tất cả" />
+                <CategoryCard
+                    href="/tat-ca-san-pham"
+                    icoUrl="/category/all-cate.png"
+                    title="Tất cả"
+                />
             </li>
         </ul>
     );

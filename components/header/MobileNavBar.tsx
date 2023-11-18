@@ -6,7 +6,6 @@ import { useState } from 'react';
 import { AiFillFacebook, AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 import { FiMenu, FiPhone } from 'react-icons/fi';
 import { SiZalo } from 'react-icons/si';
-import TooltipCustomize from '../TooltipCustomize';
 
 type Nav = 'default' | 'ring';
 export default function MobileNavBar() {
@@ -22,22 +21,22 @@ export default function MobileNavBar() {
                     <AiOutlineRight />
                 </li>
                 <li className="header__mobile-nav-title">
-                    <Link href="/">Vòng tay</Link>
+                    <Link href="/vong-tay">Vòng tay</Link>
                 </li>
                 <li className="header__mobile-nav-title">
-                    <Link href="/">Lắc tay</Link>
+                    <Link href="/lac-tay">Lắc tay</Link>
                 </li>
                 <li className="header__mobile-nav-title">
-                    <Link href="/">Bông tai</Link>
+                    <Link href="/bong-tai">Bông tai</Link>
                 </li>
                 <li className="header__mobile-nav-title">
-                    <Link href="/">Mặt dây</Link>
+                    <Link href="/mat-day">Mặt dây</Link>
                 </li>
                 <li className="header__mobile-nav-title">
-                    <Link href="/">Hạt charm</Link>
+                    <Link href="/hat-charm">Hạt charm</Link>
                 </li>
                 <li className="header__mobile-nav-title">
-                    <Link href="/">Liên hệ</Link>
+                    <Link href="/lien-he">Liên hệ</Link>
                 </li>
             </ul>
             <ul className="flex items-center justify-center mt-5 gap-5 lg:hidden">
@@ -51,14 +50,14 @@ export default function MobileNavBar() {
                     </a>
                 </li>
                 <li>
-                    <a className="zalo-icon" href="https://zalo.me/0972456292" target="_blank">
+                    <Link className="zalo-icon" href="https://zalo.me/0972456292" target="_blank">
                         <SiZalo size={36} />
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a className="phone-icon" href="tel:0972456292" target="_blank">
+                    <Link className="phone-icon" href="tel:0972456292" target="_blank">
                         <FiPhone size={36} />
-                    </a>
+                    </Link>
                 </li>
             </ul>
         </div>
@@ -78,17 +77,17 @@ export default function MobileNavBar() {
             </SheetHeader>
             <ul className="flex flex-col mt-5">
                 <li className="header__mobile-nav-title">
-                    <Link href="/" className="block w-full">
+                    <Link href="/nhan-nam" className="block w-full">
                         Nhẫn nam
                     </Link>
                 </li>
                 <li className="header__mobile-nav-title">
-                    <Link href="/" className="block w-full">
+                    <Link href="/nhan-nu" className="block w-full">
                         Nhẫn nữ
                     </Link>
                 </li>
                 <li className="header__mobile-nav-title">
-                    <Link href="/" className="block w-full">
+                    <Link href="/nhan-doi-nam-nu" className="block w-full">
                         Nhẫn đôi nam - nữ
                     </Link>
                 </li>

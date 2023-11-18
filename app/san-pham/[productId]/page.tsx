@@ -18,7 +18,10 @@ export async function generateMetadata(
     const previousImages = (await parent).openGraph?.images || [];
 
     return {
-        title: product?.dataResult.tenSanPham ?? 'Không tìm thấy sản phẩm',
+        title:
+            `${product?.dataResult.tenSanPham} - Tiệm vàng Kim Cúc` ??
+            'Không tìm thấy sản phẩm - Tiệm vàng Kim Cúc',
+        description: product?.dataResult.moTa ?? '',
         openGraph: {
             images: [product.imgUrl, ...previousImages],
         },
