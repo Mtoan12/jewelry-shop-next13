@@ -21,19 +21,19 @@ export default function MobileNavBar() {
                     <AiOutlineRight />
                 </li>
                 <li className="header__mobile-nav-title">
-                    <Link href="/vong-tay">Vòng tay</Link>
+                    <Link href="/danh-muc/vong-tay">Vòng tay</Link>
                 </li>
                 <li className="header__mobile-nav-title">
-                    <Link href="/lac-tay">Lắc tay</Link>
+                    <Link href="/danh-muc/lac-tay">Lắc tay</Link>
                 </li>
                 <li className="header__mobile-nav-title">
-                    <Link href="/bong-tai">Bông tai</Link>
+                    <Link href="/danh-muc/bong-tai">Bông tai</Link>
                 </li>
                 <li className="header__mobile-nav-title">
-                    <Link href="/mat-day">Mặt dây</Link>
+                    <Link href="/danh-muc/mat-day">Mặt dây</Link>
                 </li>
                 <li className="header__mobile-nav-title">
-                    <Link href="/hat-charm">Hạt charm</Link>
+                    <Link href="/danh-muc/hat-charm">Hạt charm</Link>
                 </li>
                 <li className="header__mobile-nav-title">
                     <Link href="/lien-he">Liên hệ</Link>
@@ -77,17 +77,17 @@ export default function MobileNavBar() {
             </SheetHeader>
             <ul className="flex flex-col mt-5">
                 <li className="header__mobile-nav-title">
-                    <Link href="/nhan-nam" className="block w-full">
+                    <Link href="/danh-muc/nhan-nam" className="block w-full">
                         Nhẫn nam
                     </Link>
                 </li>
                 <li className="header__mobile-nav-title">
-                    <Link href="/nhan-nu" className="block w-full">
+                    <Link href="/danh-muc/nhan-nu" className="block w-full">
                         Nhẫn nữ
                     </Link>
                 </li>
                 <li className="header__mobile-nav-title">
-                    <Link href="/nhan-doi-nam-nu" className="block w-full">
+                    <Link href="/danh-muc/nhan-doi-nam-nu" className="block w-full">
                         Nhẫn đôi nam - nữ
                     </Link>
                 </li>

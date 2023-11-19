@@ -6,9 +6,18 @@ type Props = {
     imgUrl: string;
     tenSanPham: string;
     trongLuongSanPham: number;
+    loaiTrangSuc: string;
+    chatLieu: string;
 };
 
-export default function ProductCard({ id, imgUrl, tenSanPham, trongLuongSanPham }: Props) {
+export default function ProductCard({
+    id,
+    imgUrl,
+    tenSanPham,
+    trongLuongSanPham,
+    loaiTrangSuc,
+    chatLieu,
+}: Props) {
     return (
         <Link
             href={`/san-pham/${id}`}
@@ -22,11 +31,15 @@ export default function ProductCard({ id, imgUrl, tenSanPham, trongLuongSanPham 
                 className="w-full object-contain h-[180px] card__image group-hover:scale-110 transition-all duration-300"
             />
 
-            <span className="text-md font-medium">{tenSanPham}</span>
-            {/* <span>
+            <div className="px-2 py-3 w-full h-[120px] flex flex-col justify-around">
+                <span className="text-md font-bold truncate text-center">{tenSanPham}</span>
+                <span className="text-md font-medium truncate text-center">
                     {loaiTrangSuc} - {chatLieu}
-                </span> */}
-            <span className="text-rose-700">{trongLuongSanPham}</span>
+                </span>
+                <span className="text-red-700 font-medium truncate text-center">
+                    {trongLuongSanPham}
+                </span>
+            </div>
         </Link>
     );
 }

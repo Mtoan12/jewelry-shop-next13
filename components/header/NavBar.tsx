@@ -23,7 +23,7 @@ export default function NavBar() {
                         </NavigationMenuTrigger>
                         <NavigationMenuContent className="flex flex-col gap-2 py-2">
                             <Link
-                                href="/nhan-nam"
+                                href="/danh-muc/nhan-nam"
                                 className="header__navbar-title"
                                 legacyBehavior
                                 passHref
@@ -33,7 +33,7 @@ export default function NavBar() {
                                 </NavigationMenuLink>
                             </Link>
                             <Link
-                                href="/nhan-nu"
+                                href="/danh-muc/nhan-nu"
                                 className="header__navbar-title"
                                 legacyBehavior
                                 passHref
@@ -43,7 +43,7 @@ export default function NavBar() {
                                 </NavigationMenuLink>
                             </Link>
                             <Link
-                                href="/nhan-doi-nam-nu"
+                                href="/danh-muc/nhan-doi-nam-nu"
                                 className="header__navbar-title"
                                 legacyBehavior
                                 passHref
@@ -57,7 +57,7 @@ export default function NavBar() {
 
                     <NavigationMenuItem>
                         <Link
-                            href="/vong-tay"
+                            href="/danh-muc/vong-tay"
                             className="header__navbar-title"
                             legacyBehavior
                             passHref
@@ -71,7 +71,7 @@ export default function NavBar() {
                     </NavigationMenuItem>
                     <NavigationMenuItem>
                         <Link
-                            href="/lac-tay"
+                            href="/danh-muc/lac-tay"
                             className="header__navbar-title"
                             legacyBehavior
                             passHref
@@ -85,7 +85,7 @@ export default function NavBar() {
                     </NavigationMenuItem>
                     <NavigationMenuItem>
                         <Link
-                            href="/bong-tai"
+                            href="/danh-muc/bong-tai"
                             className="header__navbar-title"
                             legacyBehavior
                             passHref
@@ -99,7 +99,7 @@ export default function NavBar() {
                     </NavigationMenuItem>
                     <NavigationMenuItem>
                         <Link
-                            href="/mat-day"
+                            href="/danh-muc/mat-day"
                             className="header__navbar-title"
                             legacyBehavior
                             passHref
@@ -113,7 +113,7 @@ export default function NavBar() {
                     </NavigationMenuItem>
                     <NavigationMenuItem>
                         <Link
-                            href="/hat-charm"
+                            href="/danh-muc/hat-charm"
                             className="header__navbar-title"
                             legacyBehavior
                             passHref

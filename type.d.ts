@@ -52,7 +52,7 @@ type ProductsApi = {
                 createdDate: string;
                 updatedDate: string | null;
                 isDeleted: boolean;
-            }
+            },
         ];
         totalRows: number;
     };

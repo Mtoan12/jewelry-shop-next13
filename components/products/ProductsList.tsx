@@ -16,6 +16,8 @@ export default function ProductsList({ products }: Props) {
                                 imgUrl={product.imgUrl}
                                 tenSanPham={product.tenSanPham}
                                 trongLuongSanPham={product.trongLuongSanPham}
+                                loaiTrangSuc={product.loaiTrangSuc}
+                                chatLieu={product.chatLieu}
                             />
                         </li>
                     ))}

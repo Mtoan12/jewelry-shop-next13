@@ -20,14 +20,22 @@ export default function HomeCategories() {
                     />
                 </li>
                 <li>
-                    <CategoryCard href="/nhan-nam" icoUrl="/category/ring1.png" title="Nhẫn nam" />
-                </li>
-                <li>
-                    <CategoryCard href="/nhan-nu" icoUrl="/category/ring2.png" title="Nhẫn nữ" />
+                    <CategoryCard
+                        href="/danh-muc/nhan-nam"
+                        icoUrl="/category/ring1.png"
+                        title="Nhẫn nam"
+                    />
                 </li>
                 <li>
                     <CategoryCard
-                        href="/nhan-doi-nam-nu"
+                        href="/danh-muc/nhan-nu"
+                        icoUrl="/category/ring2.png"
+                        title="Nhẫn nữ"
+                    />
+                </li>
+                <li>
+                    <CategoryCard
+                        href="/danh-muc/nhan-doi-nam-nu"
                         icoUrl="/category/ring3.png"
                         title="Nhẫn đôi nam - nữ"
                     />
@@ -41,19 +49,39 @@ export default function HomeCategories() {
                 <CategoryCard icoUrl="/category/ring3.png" title="Nhẫn" />
             </li>
             <li>
-                <CategoryCard href="/vong-tay" icoUrl="/category/bracelet.png" title="Vòng tay" />
+                <CategoryCard
+                    href="/danh-muc/vong-tay"
+                    icoUrl="/category/bracelet.png"
+                    title="Vòng tay"
+                />
             </li>
             <li>
-                <CategoryCard href="/lac-tay" icoUrl="/category/pendant.png" title="Lắc tay" />
+                <CategoryCard
+                    href="/danh-muc/lac-tay"
+                    icoUrl="/category/pendant.png"
+                    title="Lắc tay"
+                />
             </li>
             <li>
-                <CategoryCard href="/bong-tai" icoUrl="/category/earrings.png" title="Bông tai" />
+                <CategoryCard
+                    href="/danh-muc/bong-tai"
+                    icoUrl="/category/earrings.png"
+                    title="Bông tai"
+                />
             </li>
             <li>
-                <CategoryCard href="/mat-day" icoUrl="/category/necklace.png" title="Mặt dây" />
+                <CategoryCard
+                    href="/danh-muc/mat-day"
+                    icoUrl="/category/necklace.png"
+                    title="Mặt dây"
+                />
             </li>
             <li>
-                <CategoryCard href="/hat-charm" icoUrl="/category/charm.png" title="Hạt charm" />
+                <CategoryCard
+                    href="/danh-muc/hat-charm"
+                    icoUrl="/category/charm.png"
+                    title="Hạt charm"
+                />
             </li>
             <li>
                 <CategoryCard
