@@ -6,11 +6,11 @@ type Props = {
 };
 export default function ProductsList({ products }: Props) {
     return (
-        <section>
-            <ul className="products-list">
+        <section className="px-2 py-3">
+            <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 gap-y-10">
                 {products.length > 0 &&
                     products.map((product) => (
-                        <li key={product.id} className="max-w-[200px]">
+                        <li key={product.id} className="max-w-[240px]">
                             <ProductCard
                                 id={product.id}
                                 imgUrl={product.imgUrl}

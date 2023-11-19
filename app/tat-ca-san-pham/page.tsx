@@ -25,7 +25,7 @@ const AllProductsPage = async ({ searchParams }: Props) => {
     const products = res.dataResult.data;
     return (
         <main className="container pt-12 pb-24">
-            <h1 className="text-center font-bold text-4xl mb-10">Nhẫn nam</h1>
+            <h1 className="text-center font-bold text-4xl mb-10">Tất cả sản phẩm</h1>
             <Suspense fallback={<ProductCardSkeleton />}>
                 <ProductsList products={products} />
             </Suspense>
