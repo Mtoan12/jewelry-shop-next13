@@ -1,7 +1,7 @@
 export const categoryMap = {
     'nhan-nam': 1,
     'nhan-nu': 2,
-    'nhan-doi': 3,
+    'nhan-doi-nam-nu': 3,
     'vong-tay': 4,
     'lac-tay': 5,
     'bong-tai': 6,

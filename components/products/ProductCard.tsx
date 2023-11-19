@@ -21,7 +21,7 @@ export default function ProductCard({
     return (
         <Link
             href={`/san-pham/${id}`}
-            className="cursor-pointer group max-w-[200px] overflow-hidden flex flex-col h-[320px] justify-center items-center gap-2 text-primaryColor shadow-lg rounded-lg "
+            className="cursor-pointer group w-[200px] overflow-hidden flex flex-col h-[320px] justify-center items-center gap-2 text-primaryColor shadow-lg rounded-lg "
         >
             <Image
                 src={imgUrl}

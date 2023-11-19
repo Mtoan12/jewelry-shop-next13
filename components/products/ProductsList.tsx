@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import ProductCard from './ProductCard';
+import './product.scss';
 
 type Props = {
     products: any[];
